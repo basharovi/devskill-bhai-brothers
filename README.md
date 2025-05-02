@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dev Skill ভাই ব্রাদার্স - Community Website
 
-## Getting Started
+A modern, responsive community website for Dev Skill ভাই ব্রাদার্স, a vibrant .NET developer community built on brotherhood and shared growth.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Responsive Design**: Built with mobile-first approach
+- **Modern UI**: Clean and professional interface with animations
+- **Performance Optimized**: Fast load times and smooth interactions
+- **SEO Friendly**: Proper meta tags and semantic HTML
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS with Typography and Forms plugins
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+
+## 📋 Sections
+
+- Hero Section with bold headline and Call-to-Action buttons
+- About Us with timeline of key moments
+- Gallery with lightbox view
+- Events listing for past and upcoming gatherings
+- Contact Form with social media links
+- Footer with quick links and resources
+
+## 🏗️ Project Structure
+
+```
+devskill-brothers/
+├─ src/
+│  ├─ app/
+│  │  ├─ page.tsx               # Main home page
+│  │  ├─ layout.tsx             # Root layout
+│  │  └─ globals.css            # Global styles
+│  ├─ components/
+│  │  ├─ ui/                    # Reusable UI components
+│  │  │  ├─ Navbar.tsx          # Navigation bar
+│  │  │  └─ Footer.tsx          # Footer component
+│  │  └─ sections/              # Page sections
+│  │     ├─ HeroSection.tsx     # Hero section
+│  │     ├─ AboutSection.tsx    # About section
+│  │     ├─ GallerySection.tsx  # Gallery section
+│  │     ├─ EventsSection.tsx   # Events section
+│  │     └─ ContactSection.tsx  # Contact section
+├─ public/
+│  └─ images/                   # Image assets
+│     └─ gallery/               # Gallery images
+├─ tailwind.config.ts           # Tailwind configuration
+└─ package.json                 # Dependencies and scripts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚧 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📝 Notes for Development
 
-## Learn More
+- **Image Placeholders**: You'll need to add real images to the `/public/images/` directory
+- **Content**: Update the content with real community information
+- **Form Submission**: Connect the contact form to a real backend service
 
-To learn more about Next.js, take a look at the following resources:
+## 📚 Resources
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Framer Motion Documentation](https://www.framer.com/motion/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📄 License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
