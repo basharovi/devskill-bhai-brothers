@@ -5,6 +5,27 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Microsoft .NET theme colors */
+  --dotnet-purple: #512bd4;
+  --dotnet-purple-light: #6b46e5;
+  --csharp-green: #3f8624;
+  --csharp-green-light: #57a834;
+  --aspnet-blue: #0078d7;
+  --aspnet-blue-light: #0091ff;
+  --xamarin-blue: #3498db;
+  --blazor-purple: #8a2be2;
+  
+  /* New vibrant hero colors */
+  --hero-gradient-from: #1a103d;
+  --hero-gradient-via: #4c1d95;
+  --hero-gradient-to: #581c87;
+  --hero-text-gradient-from: #67e8f9;
+  --hero-text-gradient-via: #5eead4;
+  --hero-text-gradient-to: #6ee7b7;
+  --hero-accent-1: #10b981;
+  --hero-accent-2: #06b6d4;
+  --hero-accent-3: #f59e0b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,15 +43,39 @@
   body {
     @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans;
   }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-500 dark:bg-primary-600 rounded-full;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-md transition-all duration-300 transform hover:-translate-y-1;
+    @apply px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-md transition-all duration-300 shadow-md hover:shadow-lg;
   }
   
   .btn-secondary {
-    @apply px-6 py-3 bg-white text-primary-600 border border-primary-600 font-medium rounded-md transition-all duration-300 transform hover:-translate-y-1 hover:bg-gray-50;
+    @apply px-6 py-3 bg-white text-primary-600 border border-primary-600 font-medium rounded-md transition-all duration-300 hover:bg-gray-50;
+  }
+
+  .btn-dotnet {
+    @apply px-6 py-3 bg-[var(--dotnet-purple)] hover:bg-[var(--dotnet-purple-dark)] text-white font-medium rounded-md transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-csharp {
+    @apply px-6 py-3 bg-[var(--csharp-green)] hover:bg-[var(--csharp-green-dark)] text-white font-medium rounded-md transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-aspnet {
+    @apply px-6 py-3 bg-[var(--aspnet-blue)] hover:bg-[var(--aspnet-blue-dark)] text-white font-medium rounded-md transition-all duration-300 shadow-md hover:shadow-lg;
   }
 
   .section-title {
@@ -44,4 +89,128 @@
   input, textarea {
     @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white;
   }
+  
+  /* Code-inspired elements */
+  .code-block {
+    @apply font-mono bg-gray-900 text-gray-100 p-4 rounded-md shadow-md overflow-auto;
+  }
+  
+  .code-line {
+    @apply block text-sm;
+  }
+  
+  .code-comment {
+    @apply text-gray-500;
+  }
+  
+  .code-keyword {
+    @apply text-blue-400;
+  }
+  
+  .code-string {
+    @apply text-green-400;
+  }
+  
+  .code-method {
+    @apply text-yellow-400;
+  }
+  
+  .code-property {
+    @apply text-purple-400;
+  }
+  
+  /* Animated gradient backgrounds */
+  .bg-dotnet-gradient {
+    @apply bg-gradient-to-r from-[var(--dotnet-purple)] via-[var(--aspnet-blue)] to-[var(--csharp-green)];
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+  
+  .bg-dotnet-gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[var(--dotnet-purple)] via-[var(--aspnet-blue)] to-[var(--csharp-green)];
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+}
+
+/* Custom animations */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+@keyframes type-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes code-flow {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.animate-type-blink {
+  animation: type-blink 0.8s step-end infinite;
+}
+
+.animate-code-flow {
+  animation: code-flow 20s linear infinite;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-3 rounded-lg font-medium bg-gradient-to-r from-cyan-500 to-teal-500 text-white shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 flex items-center justify-center;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-lg font-medium bg-transparent border-2 border-teal-400 text-teal-200 hover:bg-teal-400/10 transition-all duration-300 flex items-center justify-center;
+}
+
+/* Animation for the floating blobs */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
 }
